@@ -1,132 +1,820 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Fairfield Civic Updates</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
-
-<script>
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        brandPurple: '#4C1D95',
-        brandPurpleHover: '#5B21B6',
-        brandGold: '#F59E0B',
-        brandGoldHover: '#D97706',
-        brandLight: '#F3E8FF'
-      }
-    }
-  }
-}
-</script>
-
-<style>
-body { font-family: 'Inter', sans-serif; }
-</style>
-</head>
-
-<body class="bg-white text-gray-800">
-
-<!-- HEADER -->
-<header class="sticky top-0 bg-white border-b shadow-sm z-50">
-  <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-    <div>
-      <h1 class="text-2xl font-bold text-brandPurple">Fairfield Civic Updates</h1>
-      <p class="text-xs uppercase tracking-widest text-gray-500">
-        Independent Community Information Hub
-      </p>
-    </div>
-
-    <nav class="space-x-6 text-sm font-medium">
-      <a href="index.html" class="hover:text-brandPurple">Home</a>
-      <a href="ordinances.html" class="hover:text-brandPurple">Ordinances</a>
-      <a href="business.html" class="hover:text-brandPurple">Doing Business</a>
-      <a href="archive.html" class="hover:text-brandPurple">Meeting Archive</a>
-      <a href="subscribe.html" class="bg-brandPurple text-white px-4 py-2 rounded-lg hover:bg-brandPurpleHover transition">
-        Subscribe
-      </a>
-    </nav>
-  </div>
-</header>
-
-<!-- HERO -->
-<section class="py-16 bg-brandLight">
-  <div class="max-w-6xl mx-auto px-6 text-center">
-    <h2 class="text-4xl font-bold text-brandPurple mb-6">
-      Staying Informed. Staying Engaged. Staying Connected.
-    </h2>
-    <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
-      Simplified summaries of council meetings, local ordinances, and helpful resources for residents and business owners in Fairfield.
-    </p>
-
-    <div class="space-x-4">
-      <a href="archive.html" class="bg-brandPurple text-white px-6 py-3 rounded-xl font-semibold hover:bg-brandPurpleHover transition">
-        View Latest Meeting
-      </a>
-      <a href="ordinances.html" class="bg-brandGold text-purple-900 px-6 py-3 rounded-xl font-semibold hover:bg-brandGoldHover transition">
-        Explore Ordinances
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- LATEST MEETING -->
-<section class="py-12">
-  <div class="max-w-6xl mx-auto px-6">
-    <h3 class="text-2xl font-semibold text-brandPurple mb-6">
-      Latest Meeting Highlights
-    </h3>
-
-    <div class="bg-white shadow-sm rounded-xl p-6 border">
-      <p class="text-sm text-gray-500 mb-2">February 2026</p>
-      <ul class="list-disc ml-6 text-gray-700 space-y-2">
-        <li>The council reviewed updates from the Fire Department regarding community wellness initiatives.</li>
-        <li>Discussion was held concerning infrastructure improvements along Gary Avenue.</li>
-        <li>Budget adjustments were presented for review.</li>
-      </ul>
-
-      <div class="mt-4">
-        <a href="#" class="text-brandPurple font-semibold underline">
-          View Official Minutes
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="mt-16 bg-brandLight border-t-4 border-brandGold py-8">
-  <div class="max-w-6xl mx-auto px-6 text-xs text-gray-600 leading-relaxed">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fairfield Civic Updates | District 2</title>
     
-    <p class="mb-4">
-      <!-- PASTE EXACT ATTORNEY MEMO DISCLAIMER LANGUAGE HERE -->
-      This webpage is intended for general informational purposes only and is not the official Code of Ordinances of the City of Fairfield. In the event of any conflict between this summary and the official Code of Ordinances, the official Code controls.
-    </p>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for standard icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <p class="mb-2 font-semibold text-gray-700">
-      Fairfield Civic Updates
-    </p>
-    <p>
-      Created by Councilman Carlton Lewis – District 2  
-      This website is not an official publication of the City of Fairfield.
-    </p>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            purple: '#4C1D95', // Primary Purple
+                            gold: '#F59E0B',   // Accent Gold
+                            light: '#F3E8FF',  // Light purple background
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* SPA View Management */
+        .page-view { display: none; }
+        .page-view.active { display: block; animation: fadeIn 0.3s ease-in-out; }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-    <p class="mt-4">
-      <a href="https://www.fairfieldal.org" target="_blank" class="underline">
-        Visit Official City Website
-      </a>
-    </p>
+        /* Custom Scrollbar for a polished look */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-gray-50 flex flex-col min-h-screen">
 
-    <p class="mt-4 text-gray-400">
-      Last Updated: March 2026
-    </p>
+    <!-- STICKY HEADER -->
+    <header class="sticky top-0 z-40 bg-white border-b border-gray-200 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Left Brand -->
+            <div>
+                <a href="#home" class="block group">
+                    <h1 class="text-xl font-bold text-brand-purple tracking-tight group-hover:text-brand-gold transition-colors">
+                        Fairfield Civic Updates
+                    </h1>
+                    <p class="text-sm text-gray-500 font-medium">Community Information Hub</p>
+                </a>
+            </div>
 
-  </div>
-</footer>
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex space-x-6 items-center">
+                <a href="#home" class="nav-link text-gray-600 hover:text-brand-purple font-medium transition-colors">Home</a>
+                <a href="#ordinances" class="nav-link text-gray-600 hover:text-brand-purple font-medium transition-colors">Ordinances</a>
+                <a href="#business" class="nav-link text-gray-600 hover:text-brand-purple font-medium transition-colors">Doing Business</a>
+                <a href="#archive" class="nav-link text-gray-600 hover:text-brand-purple font-medium transition-colors">Meeting Archive</a>
+                <a href="#subscribe" class="bg-brand-gold text-white px-4 py-2 rounded-lg font-semibold hover:bg-yellow-600 transition-colors shadow-sm">Subscribe</a>
+            </nav>
 
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-600 hover:text-brand-purple focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <!-- Subtext Ribbon -->
+        <div class="bg-brand-light py-1.5 px-4 text-center border-b border-purple-100">
+            <p class="text-xs text-brand-purple max-w-6xl mx-auto font-medium">
+                An independent informational resource created by Councilman Carlton Lewis – District 2
+            </p>
+        </div>
+
+        <!-- Mobile Nav Dropdown (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-200 shadow-inner px-4 pt-2 pb-4 space-y-2">
+            <a href="#home" class="mobile-nav-link block py-2 text-gray-700 hover:text-brand-purple font-medium">Home</a>
+            <a href="#ordinances" class="mobile-nav-link block py-2 text-gray-700 hover:text-brand-purple font-medium">Ordinances</a>
+            <a href="#business" class="mobile-nav-link block py-2 text-gray-700 hover:text-brand-purple font-medium">Doing Business</a>
+            <a href="#archive" class="mobile-nav-link block py-2 text-gray-700 hover:text-brand-purple font-medium">Meeting Archive</a>
+            <a href="#subscribe" class="mobile-nav-link block py-2 text-brand-gold font-bold">Subscribe</a>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="flex-grow">
+
+        <!-- ============================================== -->
+        <!-- 1. HOMEPAGE VIEW                               -->
+        <!-- ============================================== -->
+        <div id="view-home" class="page-view active">
+            <!-- Hero Section -->
+            <section class="bg-white py-16 px-4">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-brand-purple mb-6 leading-tight">
+                        Staying Informed.<br>Staying Engaged.<br>Staying Connected.
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">
+                        Simplified summaries of council meetings, local ordinances, and helpful resources for residents and business owners in Fairfield.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                        <a href="#archive" class="w-full sm:w-auto px-6 py-3 bg-brand-purple text-white font-medium rounded-xl shadow-sm hover:bg-purple-800 transition-colors">
+                            <i class="fas fa-video mr-2"></i> View Latest Meeting
+                        </a>
+                        <a href="#ordinances" class="w-full sm:w-auto px-6 py-3 bg-brand-gold text-white font-medium rounded-xl shadow-sm hover:bg-yellow-600 transition-colors">
+                            <i class="fas fa-book mr-2"></i> Explore Ordinances
+                        </a>
+                        <a href="https://www.fairfieldal.org" target="_blank" class="w-full sm:w-auto px-6 py-3 bg-white border-2 border-brand-purple text-brand-purple font-medium rounded-xl shadow-sm hover:bg-purple-50 transition-colors">
+                            <i class="fas fa-external-link-alt mr-2"></i> Official City Website
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Latest & Upcoming Section -->
+            <section class="py-12 px-4 bg-gray-50">
+                <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Latest Meeting Highlights (Takes 2 columns on lg) -->
+                    <div class="lg:col-span-2">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-clipboard-list text-brand-purple mr-2"></i> Latest Meeting Highlights
+                        </h3>
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 relative">
+                            <span class="absolute top-6 right-6 text-xs text-gray-400 font-medium">Updated: Mar 1, 2026</span>
+                            <h4 class="text-lg font-semibold text-brand-purple mb-1">Regular Council Session</h4>
+                            <p class="text-sm text-gray-500 mb-4"><i class="far fa-calendar-alt mr-1"></i> Monday, February 23, 2026</p>
+                            
+                            <ul class="list-disc pl-5 space-y-2 text-gray-700 mb-6">
+                                <li>The council reviewed updates from the Fire Department regarding community wellness checks.</li>
+                                <li>Discussed proposed road improvements and repaving schedules along Gary Avenue.</li>
+                                <li>Approved routine maintenance budget for community parks ahead of the spring season.</li>
+                                <li>Heard public comments regarding commercial zoning adjustments in District 2.</li>
+                            </ul>
+                            
+                            <div class="flex flex-wrap gap-3 pt-4 border-t border-gray-100">
+                                <a href="#" class="text-sm text-brand-purple hover:underline font-medium"><i class="fas fa-external-link-alt mr-1"></i> View Official Minutes</a>
+                                <button onclick="window.print()" class="text-sm text-gray-500 hover:text-gray-800 font-medium"><i class="fas fa-print mr-1"></i> Print Version</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Upcoming Meeting Reminder -->
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-bell text-brand-gold mr-2"></i> Next Meeting
+                        </h3>
+                        <div class="bg-brand-light rounded-xl shadow-sm border border-purple-100 p-6 text-center h-full flex flex-col justify-center items-center">
+                            <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-brand-purple text-2xl mb-4 shadow-sm">
+                                <i class="far fa-calendar-check"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-gray-800 mb-2">March 9, 2026</h4>
+                            <p class="text-gray-600 mb-1"><i class="far fa-clock mr-1"></i> 6:00 PM</p>
+                            <p class="text-gray-600 mb-6"><i class="fas fa-map-marker-alt mr-1"></i> City Hall Council Chambers</p>
+                            
+                            <a href="#subscribe" class="w-full inline-block px-4 py-2 bg-brand-purple text-white rounded-lg font-medium hover:bg-purple-800 transition-colors shadow-sm">
+                                Get Reminder
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Access Grid -->
+            <section class="py-12 px-4 bg-white">
+                <div class="max-w-6xl mx-auto">
+                    <h3 class="text-xl font-bold text-gray-800 mb-6 text-center">Quick Access</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        
+                        <div class="p-6 rounded-xl border border-gray-200 hover:border-brand-purple hover:shadow-md transition-all text-center">
+                            <div class="text-3xl text-brand-purple mb-4"><i class="fas fa-balance-scale"></i></div>
+                            <h4 class="font-bold text-gray-800 mb-2">Ordinance Explorer</h4>
+                            <p class="text-sm text-gray-600 mb-4">Plain-English summaries of commonly referenced local laws.</p>
+                            <a href="#ordinances" class="text-brand-purple font-semibold text-sm hover:underline">Explore Ordinances →</a>
+                        </div>
+
+                        <div class="p-6 rounded-xl border border-gray-200 hover:border-brand-gold hover:shadow-md transition-all text-center">
+                            <div class="text-3xl text-brand-gold mb-4"><i class="fas fa-store"></i></div>
+                            <h4 class="font-bold text-gray-800 mb-2">Doing Business</h4>
+                            <p class="text-sm text-gray-600 mb-4">A step-by-step guide to local requirements for entrepreneurs.</p>
+                            <a href="#business" class="text-brand-gold font-semibold text-sm hover:underline">View Guide →</a>
+                        </div>
+
+                        <div class="p-6 rounded-xl border border-gray-200 hover:border-gray-400 hover:shadow-md transition-all text-center">
+                            <div class="text-3xl text-gray-600 mb-4"><i class="fas fa-file-signature"></i></div>
+                            <h4 class="font-bold text-gray-800 mb-2">Official Documents</h4>
+                            <p class="text-sm text-gray-600 mb-4">Direct access to the City Clerk's official repository.</p>
+                            <a href="https://www.fairfieldal.org" target="_blank" class="text-gray-600 font-semibold text-sm hover:underline">Visit City Site <i class="fas fa-external-link-alt text-xs ml-1"></i></a>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Transparency Section -->
+            <section class="py-10 px-4 bg-gray-50 border-t border-gray-200">
+                <div class="max-w-4xl mx-auto text-center">
+                    <div class="inline-block p-3 rounded-full bg-blue-50 text-blue-600 mb-3">
+                        <i class="fas fa-info-circle text-xl"></i>
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        <strong>Transparency Note:</strong> Fairfield Civic Updates provides simplified summaries for easier understanding. Official and controlling documents are always maintained by the City Clerk and linked where available. This is not a substitute for official legal code.
+                    </p>
+                </div>
+            </section>
+        </div>
+
+
+        <!-- ============================================== -->
+        <!-- 2. ORDINANCES PAGE VIEW                        -->
+        <!-- ============================================== -->
+        <div id="view-ordinances" class="page-view py-12 px-4 bg-gray-50">
+            <div class="max-w-6xl mx-auto">
+                
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold text-brand-purple mb-3">Ordinance Explorer</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto mb-4">Plain-English summaries of commonly referenced city ordinances.</p>
+                    <span class="inline-block bg-white border border-gray-200 text-xs text-gray-500 px-3 py-1 rounded-full">
+                        <i class="fas fa-shield-alt text-brand-gold mr-1"></i> Built in accordance with City Attorney guidance (March 2026)
+                    </span>
+                </div>
+
+                <!-- Search and Filters -->
+                <div class="mb-8">
+                    <div class="max-w-xl mx-auto relative mb-6">
+                        <input type="text" placeholder="Search ordinances by keyword or number..." class="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-purple focus:border-transparent shadow-sm">
+                        <i class="fas fa-search absolute left-4 top-3.5 text-gray-400"></i>
+                    </div>
+                    
+                    <div class="flex flex-wrap justify-center gap-2">
+                        <button class="px-4 py-1.5 rounded-full bg-brand-purple text-white text-sm font-medium shadow-sm">All</button>
+                        <button class="px-4 py-1.5 rounded-full bg-white border border-gray-300 text-gray-600 hover:bg-gray-50 text-sm font-medium shadow-sm transition-colors">Business</button>
+                        <button class="px-4 py-1.5 rounded-full bg-white border border-gray-300 text-gray-600 hover:bg-gray-50 text-sm font-medium shadow-sm transition-colors">Property</button>
+                        <button class="px-4 py-1.5 rounded-full bg-white border border-gray-300 text-gray-600 hover:bg-gray-50 text-sm font-medium shadow-sm transition-colors">Public Safety</button>
+                    </div>
+                </div>
+
+                <!-- Ordinance Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Card 1 -->
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 flex flex-col h-full hover:shadow-md transition-shadow">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center text-lg">
+                                <i class="fas fa-store"></i>
+                            </div>
+                            <span class="text-xs font-bold text-gray-400">ORD 1019</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-800 mb-1">Occupational License Fee</h4>
+                        <span class="inline-block text-xs font-medium text-blue-600 mb-3 uppercase tracking-wider">Business</span>
+                        <p class="text-sm text-gray-600 mb-6 flex-grow">Establishes the requirement and fee structure for operating a business or practicing a profession within city limits.</p>
+                        <button onclick="openModal('modal-ord-1')" class="w-full py-2 bg-gray-50 border border-gray-200 rounded-lg text-brand-purple font-medium text-sm hover:bg-brand-light transition-colors">
+                            View Details
+                        </button>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 flex flex-col h-full hover:shadow-md transition-shadow">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-green-50 text-green-600 flex items-center justify-center text-lg">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <span class="text-xs font-bold text-gray-400">ORD 931</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-800 mb-1">Residential Zoning Standards</h4>
+                        <span class="inline-block text-xs font-medium text-green-600 mb-3 uppercase tracking-wider">Property</span>
+                        <p class="text-sm text-gray-600 mb-6 flex-grow">Outlines permitted structural modifications, fencing heights, and setback requirements for residential properties.</p>
+                        <button onclick="openModal('modal-ord-2')" class="w-full py-2 bg-gray-50 border border-gray-200 rounded-lg text-brand-purple font-medium text-sm hover:bg-brand-light transition-colors">
+                            View Details
+                        </button>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 flex flex-col h-full hover:shadow-md transition-shadow">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-red-50 text-red-600 flex items-center justify-center text-lg">
+                                <i class="fas fa-truck-moving"></i>
+                            </div>
+                            <span class="text-xs font-bold text-gray-400">ORD 2017-1101</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-800 mb-1">Mobile Food Vendors</h4>
+                        <span class="inline-block text-xs font-medium text-red-600 mb-3 uppercase tracking-wider">Business / Safety</span>
+                        <p class="text-sm text-gray-600 mb-6 flex-grow">Regulations regarding the operation, parking, and safety inspections required for food trucks and mobile vendors.</p>
+                        <button onclick="openModal('modal-ord-3')" class="w-full py-2 bg-gray-50 border border-gray-200 rounded-lg text-brand-purple font-medium text-sm hover:bg-brand-light transition-colors">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================== -->
+        <!-- 3. DOING BUSINESS PAGE VIEW                    -->
+        <!-- ============================================== -->
+        <div id="view-business" class="page-view py-12 px-4 bg-gray-50">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold text-brand-purple mb-3">Doing Business in Fairfield</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">A step-by-step guide to help entrepreneurs understand local requirements.</p>
+                </div>
+
+                <!-- Steps container (Stacked Cards) -->
+                <div class="space-y-4 mb-12">
+                    
+                    <!-- Step 1 -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 flex flex-col sm:flex-row gap-6 items-start">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-brand-light text-brand-purple flex items-center justify-center font-bold text-xl">1</div>
+                        <div class="flex-grow">
+                            <h4 class="text-lg font-bold text-gray-800 mb-2">Acquire a Business License</h4>
+                            <p class="text-sm text-gray-600 mb-3">All businesses operating within city limits must apply for and maintain an active general business license.</p>
+                            <a href="https://www.fairfieldal.org" target="_blank" class="text-sm text-brand-purple font-medium hover:underline"><i class="fas fa-external-link-alt mr-1"></i> Official Revenue Office</a>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 flex flex-col sm:flex-row gap-6 items-start">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-brand-light text-brand-purple flex items-center justify-center font-bold text-xl">2</div>
+                        <div class="flex-grow">
+                            <h4 class="text-lg font-bold text-gray-800 mb-2">Occupational License Fee (ORD 1019)</h4>
+                            <p class="text-sm text-gray-600 mb-3">Depending on your business structure, you may need to submit occupational license fees based on gross receipts or employee count.</p>
+                            <a href="#ordinances" class="text-sm text-brand-purple font-medium hover:underline"><i class="fas fa-book mr-1"></i> Read Ordinance Summary</a>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 flex flex-col sm:flex-row gap-6 items-start">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-brand-light text-brand-purple flex items-center justify-center font-bold text-xl">3</div>
+                        <div class="flex-grow">
+                            <h4 class="text-lg font-bold text-gray-800 mb-2">Zoning Check & Approval (ORD 931)</h4>
+                            <p class="text-sm text-gray-600 mb-3">Before signing a commercial lease or operating from home, verify that your business type is permitted in that specific zoning district.</p>
+                            <span class="text-sm text-gray-500"><i class="fas fa-phone mr-1"></i> Contact Planning Department</span>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 flex flex-col sm:flex-row gap-6 items-start">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-brand-light text-brand-purple flex items-center justify-center font-bold text-xl">4</div>
+                        <div class="flex-grow">
+                            <h4 class="text-lg font-bold text-gray-800 mb-2">Specialty: Food Trucks (ORD 2017-1101)</h4>
+                            <p class="text-sm text-gray-600 mb-3">Mobile food vendors require specific location approvals, health department clearance, and proof of liability insurance.</p>
+                            <span class="text-sm text-red-500 font-medium"><i class="fas fa-exclamation-triangle mr-1"></i> Insurance proof required prior to permit issuance</span>
+                        </div>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 flex flex-col sm:flex-row gap-6 items-start">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-brand-light text-brand-purple flex items-center justify-center font-bold text-xl">5</div>
+                        <div class="flex-grow">
+                            <h4 class="text-lg font-bold text-gray-800 mb-2">Fire & Safety Inspection</h4>
+                            <p class="text-sm text-gray-600 mb-3">Commercial spaces and mobile units are subject to pre-opening safety inspections by the Fire Marshal to ensure public safety standards.</p>
+                            <span class="text-sm text-gray-500"><i class="fas fa-fire mr-1"></i> Schedule with Fire Department</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Contacts Directory -->
+                <h3 class="text-xl font-bold text-brand-purple mb-6 text-center border-t border-gray-200 pt-10">Essential Contacts Directory</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="bg-white p-4 rounded-lg border border-gray-200 text-center shadow-sm">
+                        <h5 class="font-bold text-gray-800">City Clerk</h5>
+                        <p class="text-sm text-gray-500 mb-2">General Info & Records</p>
+                        <a href="https://www.fairfieldal.org" target="_blank" class="text-xs text-brand-purple hover:underline block mb-1">Official Site <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg border border-gray-200 text-center shadow-sm">
+                        <h5 class="font-bold text-gray-800">Police Department</h5>
+                        <p class="text-sm text-gray-500 mb-2">Non-Emergency</p>
+                        <a href="https://www.fairfieldal.org" target="_blank" class="text-xs text-brand-purple hover:underline block mb-1">Official Site <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg border border-gray-200 text-center shadow-sm">
+                        <h5 class="font-bold text-gray-800">Fire Department</h5>
+                        <p class="text-sm text-gray-500 mb-2">Inspections & Safety</p>
+                        <a href="https://www.fairfieldal.org" target="_blank" class="text-xs text-brand-purple hover:underline block mb-1">Official Site <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg border border-gray-200 text-center shadow-sm">
+                        <h5 class="font-bold text-gray-800">Planning & Zoning</h5>
+                        <p class="text-sm text-gray-500 mb-2">Permits & Approvals</p>
+                        <a href="https://www.fairfieldal.org" target="_blank" class="text-xs text-brand-purple hover:underline block mb-1">Official Site <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg border border-gray-200 text-center shadow-sm">
+                        <h5 class="font-bold text-gray-800">Public Works</h5>
+                        <p class="text-sm text-gray-500 mb-2">Sanitation & Streets</p>
+                        <a href="https://www.fairfieldal.org" target="_blank" class="text-xs text-brand-purple hover:underline block mb-1">Official Site <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg border border-gray-200 text-center shadow-sm">
+                        <h5 class="font-bold text-gray-800">Revenue Dept.</h5>
+                        <p class="text-sm text-gray-500 mb-2">Licenses & Taxes</p>
+                        <a href="https://www.fairfieldal.org" target="_blank" class="text-xs text-brand-purple hover:underline block mb-1">Official Site <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================== -->
+        <!-- 4. MEETING ARCHIVE PAGE VIEW                   -->
+        <!-- ============================================== -->
+        <div id="view-archive" class="page-view py-12 px-4 bg-gray-50">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold text-brand-purple mb-3">Council Meeting Archive</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Summaries of recent council meetings. Official minutes are always linked.</p>
+                </div>
+
+                <!-- Filters -->
+                <div class="flex flex-col sm:flex-row justify-between items-center bg-white p-4 rounded-xl shadow-sm border border-gray-200 mb-8 gap-4">
+                    <div class="flex items-center w-full sm:w-auto">
+                        <label for="year-filter" class="text-sm text-gray-600 font-medium mr-3 whitespace-nowrap">Filter Year:</label>
+                        <select id="year-filter" class="w-full sm:w-auto bg-gray-50 border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-brand-purple focus:border-brand-purple block p-2">
+                            <option value="2026">2026</option>
+                            <option value="2025">2025</option>
+                            <option value="2024">2024</option>
+                        </select>
+                    </div>
+                    <div class="relative w-full sm:w-64">
+                        <input type="text" placeholder="Search archive..." class="w-full pl-9 pr-3 py-2 bg-gray-50 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-purple">
+                        <i class="fas fa-search absolute left-3 top-2.5 text-gray-400 text-sm"></i>
+                    </div>
+                </div>
+
+                <!-- Archive List -->
+                <div class="space-y-6">
+                    <!-- Meeting Card 1 -->
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                        <div class="flex justify-between items-start mb-4 border-b border-gray-100 pb-4">
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-800">Regular Council Session</h3>
+                                <p class="text-sm text-gray-500 font-medium"><i class="far fa-calendar-alt mr-1"></i> February 23, 2026</p>
+                            </div>
+                            <span class="text-xs text-gray-400">Updated: Mar 1, 2026</span>
+                        </div>
+                        <ul class="list-disc pl-5 space-y-2 text-sm text-gray-700 mb-6">
+                            <li>The council reviewed updates from the Fire Department regarding community wellness checks.</li>
+                            <li>Discussed proposed road improvements and repaving schedules along Gary Avenue.</li>
+                            <li>Approved routine maintenance budget for community parks ahead of the spring season.</li>
+                            <li>Heard public comments regarding commercial zoning adjustments in District 2.</li>
+                        </ul>
+                        <div class="flex gap-4">
+                            <a href="#" class="text-sm text-brand-purple font-medium hover:underline"><i class="fas fa-external-link-alt mr-1"></i> Official Minutes</a>
+                            <button onclick="window.print()" class="text-sm text-gray-500 font-medium hover:text-gray-800"><i class="fas fa-print mr-1"></i> View Printable Version</button>
+                        </div>
+                    </div>
+
+                    <!-- Meeting Card 2 -->
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                        <div class="flex justify-between items-start mb-4 border-b border-gray-100 pb-4">
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-800">Special Called Meeting</h3>
+                                <p class="text-sm text-gray-500 font-medium"><i class="far fa-calendar-alt mr-1"></i> February 9, 2026</p>
+                            </div>
+                            <span class="text-xs text-gray-400">Updated: Feb 12, 2026</span>
+                        </div>
+                        <ul class="list-disc pl-5 space-y-2 text-sm text-gray-700 mb-6">
+                            <li>Reviewed municipal audit reports for the prior fiscal quarter.</li>
+                            <li>Authorized the public works department to accept bids for municipal building roof repairs.</li>
+                            <li>Voted to formally recognize local student athletes for regional achievements.</li>
+                        </ul>
+                        <div class="flex gap-4">
+                            <a href="#" class="text-sm text-brand-purple font-medium hover:underline"><i class="fas fa-external-link-alt mr-1"></i> Official Minutes</a>
+                            <button onclick="window.print()" class="text-sm text-gray-500 font-medium hover:text-gray-800"><i class="fas fa-print mr-1"></i> View Printable Version</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ============================================== -->
+        <!-- 5. SUBSCRIBE PAGE VIEW                         -->
+        <!-- ============================================== -->
+        <div id="view-subscribe" class="page-view py-16 px-4 bg-gray-50">
+            <div class="max-w-md mx-auto bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="bg-brand-purple py-8 px-6 text-center text-white">
+                    <div class="text-4xl text-brand-gold mb-3"><i class="far fa-paper-plane"></i></div>
+                    <h2 class="text-2xl font-bold mb-2">Stay Informed</h2>
+                    <p class="text-purple-100 text-sm">Receive email updates and meeting reminders directly to your inbox or phone.</p>
+                </div>
+                
+                <form class="p-6" onsubmit="handleSubscribe(event)">
+                    
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Name <span class="text-gray-400 font-normal">(Optional)</span></label>
+                        <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-purple focus:border-transparent outline-none transition-shadow">
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Email Address <span class="text-red-500">*</span></label>
+                        <input type="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-purple focus:border-transparent outline-none transition-shadow">
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number <span class="text-gray-400 font-normal">(Optional)</span></label>
+                        <input type="tel" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-purple focus:border-transparent outline-none transition-shadow" placeholder="(555) 555-5555">
+                    </div>
+
+                    <div class="space-y-3 mb-6 bg-gray-50 p-4 rounded-lg border border-gray-100">
+                        <label class="flex items-start">
+                            <input type="checkbox" checked class="mt-1 h-4 w-4 text-brand-purple focus:ring-brand-purple border-gray-300 rounded">
+                            <span class="ml-2 text-sm text-gray-700">Email Updates (Newsletters & Summaries)</span>
+                        </label>
+                        <label class="flex items-start">
+                            <input type="checkbox" class="mt-1 h-4 w-4 text-brand-purple focus:ring-brand-purple border-gray-300 rounded">
+                            <span class="ml-2 text-sm text-gray-700">Text Meeting Reminders (24hrs before meetings)</span>
+                        </label>
+                    </div>
+
+                    <div class="mb-6 text-xs text-gray-500 bg-gray-50 p-3 rounded border border-gray-100">
+                        <strong>SMS Disclosure:</strong> By submitting your phone number, you consent to receive meeting reminder text messages. Message frequency varies. Reply STOP to unsubscribe. Message & data rates may apply.
+                    </div>
+
+                    <button type="submit" class="w-full py-3 px-4 bg-brand-purple text-white font-bold rounded-xl hover:bg-purple-800 transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-purple">
+                        Subscribe
+                    </button>
+                    
+                    <div id="subscribe-success" class="hidden mt-4 p-3 bg-green-50 border border-green-200 text-green-700 text-sm rounded-lg text-center">
+                        <i class="fas fa-check-circle mr-1"></i> Thank you! You've been added to the list.
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- ============================================== -->
+        <!-- 6. ADMIN PAGE VIEW (HIDDEN ROUTE)              -->
+        <!-- ============================================== -->
+        <div id="view-admin" class="page-view py-12 px-4 bg-gray-100 min-h-screen">
+            <div class="max-w-4xl mx-auto">
+                
+                <!-- Admin Login Panel (Visible initially in Admin view) -->
+                <div id="admin-login" class="max-w-sm mx-auto bg-white p-8 rounded-lg shadow-sm border border-gray-200 mt-10">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-lock text-gray-400 text-3xl mb-2"></i>
+                        <h2 class="text-xl font-bold text-gray-800">Admin Portal</h2>
+                        <p class="text-xs text-gray-500">Authorized access only.</p>
+                    </div>
+                    <form onsubmit="handleAdminLogin(event)">
+                        <input type="email" placeholder="Email Address" required class="w-full mb-3 px-3 py-2 border border-gray-300 rounded text-sm outline-none focus:border-brand-purple">
+                        <input type="password" placeholder="Password" required class="w-full mb-4 px-3 py-2 border border-gray-300 rounded text-sm outline-none focus:border-brand-purple">
+                        <button type="submit" class="w-full py-2 bg-gray-800 text-white rounded text-sm font-bold hover:bg-black transition-colors">Login</button>
+                    </form>
+                </div>
+
+                <!-- Admin Dashboard (Hidden initially) -->
+                <div id="admin-dashboard" class="hidden">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-2xl font-bold text-gray-800">System Dashboard</h2>
+                        <button onclick="document.getElementById('admin-dashboard').classList.add('hidden'); document.getElementById('admin-login').classList.remove('hidden');" class="text-sm text-gray-500 hover:text-red-500"><i class="fas fa-sign-out-alt"></i> Logout</button>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        <!-- Add/Edit Meeting Column -->
+                        <div class="lg:col-span-2 space-y-6">
+                            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                                <h3 class="text-lg font-bold text-gray-800 mb-4 border-b pb-2"><i class="fas fa-plus text-gray-400 mr-2"></i> Add/Edit Meeting Summary</h3>
+                                <form class="space-y-4">
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <div>
+                                            <label class="block text-xs font-bold text-gray-600 mb-1">Date</label>
+                                            <input type="date" class="w-full px-3 py-2 border border-gray-300 rounded text-sm">
+                                        </div>
+                                        <div>
+                                            <label class="block text-xs font-bold text-gray-600 mb-1">Title</label>
+                                            <input type="text" placeholder="e.g. Regular Session" class="w-full px-3 py-2 border border-gray-300 rounded text-sm">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold text-gray-600 mb-1">Summary Bullets (One per line)</label>
+                                        <textarea rows="4" class="w-full px-3 py-2 border border-gray-300 rounded text-sm font-mono"></textarea>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold text-gray-600 mb-1">Official Minutes Link (URL)</label>
+                                        <input type="url" placeholder="https://" class="w-full px-3 py-2 border border-gray-300 rounded text-sm">
+                                    </div>
+                                    <button type="button" class="px-4 py-2 bg-gray-800 text-white text-sm font-bold rounded hover:bg-black">Save Entry</button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- Subscribers Column -->
+                        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 h-fit">
+                            <h3 class="text-lg font-bold text-gray-800 mb-4 border-b pb-2"><i class="fas fa-users text-gray-400 mr-2"></i> Subscribers</h3>
+                            
+                            <div class="overflow-y-auto max-h-64 mb-4">
+                                <table class="w-full text-left text-xs">
+                                    <thead class="bg-gray-50 text-gray-500">
+                                        <tr>
+                                            <th class="p-2">Email / Phone</th>
+                                            <th class="p-2">Pref</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-gray-100">
+                                        <tr>
+                                            <td class="p-2">user1@example.com</td>
+                                            <td class="p-2 text-gray-400"><i class="fas fa-envelope"></i></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-2">(555) 123-4567</td>
+                                            <td class="p-2 text-gray-400"><i class="fas fa-mobile-alt"></i></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-2">resident2@mail.com<br>(555) 987-6543</td>
+                                            <td class="p-2 text-gray-400"><i class="fas fa-envelope mr-1"></i><i class="fas fa-mobile-alt"></i></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <button class="w-full py-2 bg-gray-100 border border-gray-300 text-gray-700 text-sm font-bold rounded hover:bg-gray-200">
+                                <i class="fas fa-file-csv mr-1"></i> Export CSV
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- GLOBAL FOOTER -->
+    <footer class="bg-white border-t border-gray-200 mt-auto">
+        <div class="max-w-6xl mx-auto px-4 py-10">
+            <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 mb-8">
+                <h5 class="font-bold text-gray-800 mb-2 flex items-center"><i class="fas fa-balance-scale-right text-brand-purple mr-2"></i> Legal Disclaimer</h5>
+                <p class="text-xs text-gray-600 leading-relaxed text-justify mb-2">
+                    This website is an independent informational resource created and maintained by Councilman Carlton Lewis (District 2). It is not an official publication, platform, or communications channel of the City of Fairfield, Alabama, its municipal government, or the City Council as a whole.
+                </p>
+                <p class="text-xs text-gray-600 leading-relaxed text-justify">
+                    The summaries, explanations, and overviews provided herein are intended strictly to assist residents and business owners in understanding local civic matters. They do not constitute legal advice, nor do they supersede, alter, or represent the controlling municipal code. All official ordinances, minutes, and controlling documents are maintained exclusively by the Office of the City Clerk. For definitive legal or regulatory compliance, users must consult official city repositories or legal counsel.
+                </p>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-4 border-t border-gray-200 pt-6">
+                <div>
+                    <h4 class="font-bold text-brand-purple mb-1">Fairfield Civic Updates</h4>
+                    <p class="text-sm text-gray-500">Created by Councilman Carlton Lewis – District 2</p>
+                    <p class="text-xs text-gray-400 mt-1">This website is not an official publication of the City of Fairfield.</p>
+                </div>
+                <div class="text-center md:text-right">
+                    <a href="https://www.fairfieldal.org" target="_blank" class="text-sm text-brand-purple hover:underline mb-2 inline-block font-medium">
+                        Visit Official City Website <i class="fas fa-external-link-alt text-xs ml-1"></i>
+                    </a>
+                    <p class="text-xs text-gray-400 block" id="footer-timestamp">Last Updated: March 2026</p>
+                </div>
+            </div>
+            <!-- Hidden Admin Link -->
+            <div class="text-center mt-4">
+                <a href="#admin" class="text-[10px] text-gray-200 hover:text-gray-300"><i class="fas fa-lock"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ORDINANCE MODALS (Hidden by default) -->
+    <div id="modal-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <!-- Modal Content Container -->
+        <div id="modal-content" class="bg-white rounded-xl shadow-xl w-full max-w-lg overflow-hidden transform transition-all">
+            <!-- Dynamically populated by JS, or hardcoded for demo -->
+            <div class="px-6 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50">
+                <h3 class="text-lg font-bold text-gray-800" id="modal-title">Ordinance Details</h3>
+                <button onclick="closeModal()" class="text-gray-400 hover:text-gray-700 focus:outline-none">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div class="p-6">
+                <div class="mb-4">
+                    <h4 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Purpose</h4>
+                    <p class="text-sm text-gray-700" id="modal-purpose">Loading...</p>
+                </div>
+                <div class="mb-4">
+                    <h4 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Key Rules</h4>
+                    <ul class="list-disc pl-5 text-sm text-gray-700 space-y-1" id="modal-rules">
+                        <li>Loading...</li>
+                    </ul>
+                </div>
+                <div class="mb-6">
+                    <h4 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Enforcement & Penalties</h4>
+                    <p class="text-sm text-gray-700" id="modal-penalties">Loading...</p>
+                </div>
+                <a href="#" class="block w-full text-center py-2 bg-gray-100 text-brand-purple font-semibold rounded-lg hover:bg-gray-200 transition-colors text-sm">
+                    <i class="fas fa-external-link-alt mr-1"></i> View Official Code Page
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT FOR ROUTING AND INTERACTIVITY -->
+    <script>
+        // --- SPA ROUTING LOGIC ---
+        function handleRoute() {
+            let hash = window.location.hash.substring(1) || 'home';
+            
+            // Hide all views
+            document.querySelectorAll('.page-view').forEach(view => {
+                view.classList.remove('active');
+            });
+            
+            // Show target view
+            const targetView = document.getElementById('view-' + hash);
+            if(targetView) {
+                targetView.classList.add('active');
+            } else {
+                document.getElementById('view-home').classList.add('active'); // fallback
+                hash = 'home';
+            }
+
+            // Update Nav Links Active State
+            document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(link => {
+                if(link.getAttribute('href') === '#' + hash) {
+                    link.classList.add('text-brand-purple', 'font-bold');
+                    link.classList.remove('text-gray-600', 'text-gray-700', 'font-medium');
+                } else {
+                    link.classList.remove('text-brand-purple', 'font-bold');
+                    // Reset based on desktop or mobile class
+                    if(link.classList.contains('nav-link')) {
+                        link.classList.add('text-gray-600', 'font-medium');
+                    } else {
+                        link.classList.add('text-gray-700', 'font-medium');
+                    }
+                }
+            });
+
+            // Close mobile menu on route change
+            document.getElementById('mobile-menu').classList.add('hidden');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Listen for hash changes
+        window.addEventListener('hashchange', handleRoute);
+        // Run on initial load
+        window.addEventListener('load', handleRoute);
+
+        // --- MOBILE MENU TOGGLE ---
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // --- MODAL LOGIC (Ordinances) ---
+        const ordinanceData = {
+            'modal-ord-1': {
+                title: 'ORD 1019 - Occupational License Fee',
+                purpose: 'Establishes the requirement and fee structure for operating a business or practicing a profession within city limits.',
+                rules: ['Must apply prior to beginning operations.', 'Renewable annually by January 31st.', 'Fees calculated based on business classification.'],
+                penalties: 'Late fees apply after January 31st. Operating without a license may result in citations or forced closure.'
+            },
+            'modal-ord-2': {
+                title: 'ORD 931 - Residential Zoning Standards',
+                purpose: 'Maintains neighborhood aesthetics and structural safety by outlining permitted modifications.',
+                rules: ['Fences in front yards cannot exceed 4 feet in height.', 'Storage sheds must be placed in the rear yard.', 'Requires minimum setback from property lines.'],
+                penalties: 'Code enforcement warning followed by fines up to $500 per violation. Possible requirement to tear down non-compliant structures.'
+            },
+            'modal-ord-3': {
+                title: 'ORD 2017-1101 - Mobile Food Vendors',
+                purpose: 'Ensures public health and safety regarding the operation and parking of food trucks.',
+                rules: ['Must maintain active Health Dept clearance.', 'Cannot operate within 200 feet of a brick-and-mortar restaurant without permission.', 'Requires $1M liability insurance.'],
+                penalties: 'Immediate suspension of operating permit and removal from premises.'
+            }
+        };
+
+        function openModal(ordId) {
+            const data = ordinanceData[ordId];
+            if(data) {
+                document.getElementById('modal-title').innerText = data.title;
+                document.getElementById('modal-purpose').innerText = data.purpose;
+                document.getElementById('modal-rules').innerHTML = data.rules.map(r => `<li>${r}</li>`).join('');
+                document.getElementById('modal-penalties').innerText = data.penalties;
+                
+                document.getElementById('modal-overlay').classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('modal-overlay').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal on outside click
+        document.getElementById('modal-overlay').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+
+        // --- FORMS & ADMIN MOCK LOGIC ---
+        function handleSubscribe(e) {
+            e.preventDefault();
+            document.getElementById('subscribe-success').classList.remove('hidden');
+            setTimeout(() => {
+                e.target.reset();
+                document.getElementById('subscribe-success').classList.add('hidden');
+            }, 4000);
+        }
+
+        function handleAdminLogin(e) {
+            e.preventDefault();
+            // Simple visual mock for admin panel access
+            document.getElementById('admin-login').classList.add('hidden');
+            document.getElementById('admin-dashboard').classList.remove('hidden');
+        }
+
+        // --- TIMESTAMP GENERATOR ---
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        // Sets timestamp dynamically, but hardcodes "March 2026" text per context timeframe if preferred.
+        // Left as static string in HTML for exact compliance, but can be updated here:
+        // document.getElementById('footer-timestamp').innerText = "Last Updated: " + new Date().toLocaleDateString('en-US', options);
+    </script>
 </body>
 </html>
