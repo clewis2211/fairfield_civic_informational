@@ -54,49 +54,130 @@ body { font-family: 'Inter', sans-serif; }
 </header>
 
 <!-- HERO -->
-<section class="py-16 bg-brandLight">
-  <div class="max-w-6xl mx-auto px-6 text-center">
-    <h2 class="text-4xl font-bold text-brandPurple mb-6">
-      Staying Informed. Staying Engaged. Staying Connected.
-    </h2>
-    <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
-      Simplified summaries of council meetings, local ordinances, and helpful resources for residents and business owners in Fairfield.
-    </p>
+<!-- MAIN CONTENT AREA -->
+    <main class="flex-grow">
 
-    <div class="space-x-4">
-      <a href="archive.html" class="bg-brandPurple text-white px-6 py-3 rounded-xl font-semibold hover:bg-brandPurpleHover transition">
-        View Latest Meeting
-      </a>
-      <a href="ordinances.html" class="bg-brandGold text-purple-900 px-6 py-3 rounded-xl font-semibold hover:bg-brandGoldHover transition">
-        Explore Ordinances
-      </a>
-    </div>
-  </div>
-</section>
+        <!-- ============================================== -->
+        <!-- 1. HOMEPAGE VIEW                               -->
+        <!-- ============================================== -->
+        <div id="view-home" class="page-view active">
+            <!-- Hero Section -->
+            <section class="bg-white py-16 px-4">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-brand-purple mb-6 leading-tight">
+                        Staying Informed.<br>Staying Engaged.<br>Staying Connected.
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">
+                        Simplified summaries of council meetings, local ordinances, and helpful resources for residents and business owners in Fairfield.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                        <a href="#archive" class="w-full sm:w-auto px-6 py-3 bg-brand-purple text-white font-medium rounded-xl shadow-sm hover:bg-purple-800 transition-colors">
+                            <i class="fas fa-video mr-2"></i> View Latest Meeting
+                        </a>
+                        <a href="#ordinances" class="w-full sm:w-auto px-6 py-3 bg-brand-gold text-white font-medium rounded-xl shadow-sm hover:bg-yellow-600 transition-colors">
+                            <i class="fas fa-book mr-2"></i> Explore Ordinances
+                        </a>
+                        <a href="https://www.fairfieldal.org" target="_blank" class="w-full sm:w-auto px-6 py-3 bg-white border-2 border-brand-purple text-brand-purple font-medium rounded-xl shadow-sm hover:bg-purple-50 transition-colors">
+                            <i class="fas fa-external-link-alt mr-2"></i> Official City Website
+                        </a>
+                    </div>
+                </div>
+            </section>
 
-<!-- LATEST MEETING -->
-<section class="py-12">
-  <div class="max-w-6xl mx-auto px-6">
-    <h3 class="text-2xl font-semibold text-brandPurple mb-6">
-      Latest Meeting Highlights
-    </h3>
+            <!-- Latest & Upcoming Section -->
+            <section class="py-12 px-4 bg-gray-50">
+                <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Latest Meeting Highlights (Takes 2 columns on lg) -->
+                    <div class="lg:col-span-2">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-clipboard-list text-brand-purple mr-2"></i> Latest Meeting Highlights
+                        </h3>
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 relative">
+                            <span class="absolute top-6 right-6 text-xs text-gray-400 font-medium">Updated: Mar 1, 2026</span>
+                            <h4 class="text-lg font-semibold text-brand-purple mb-1">Regular Council Session</h4>
+                            <p class="text-sm text-gray-500 mb-4"><i class="far fa-calendar-alt mr-1"></i> Monday, February 23, 2026</p>
+                            
+                            <ul class="list-disc pl-5 space-y-2 text-gray-700 mb-6">
+                                <li>The council reviewed updates from the Fire Department regarding community wellness checks.</li>
+                                <li>Discussed proposed road improvements and repaving schedules along Gary Avenue.</li>
+                                <li>Approved routine maintenance budget for community parks ahead of the spring season.</li>
+                                <li>Heard public comments regarding commercial zoning adjustments in District 2.</li>
+                            </ul>
+                            
+                            <div class="flex flex-wrap gap-3 pt-4 border-t border-gray-100">
+                                <a href="#" class="text-sm text-brand-purple hover:underline font-medium"><i class="fas fa-external-link-alt mr-1"></i> View Official Minutes</a>
+                                <button onclick="window.print()" class="text-sm text-gray-500 hover:text-gray-800 font-medium"><i class="fas fa-print mr-1"></i> Print Version</button>
+                            </div>
+                        </div>
+                    </div>
 
-    <div class="bg-white shadow-sm rounded-xl p-6 border">
-      <p class="text-sm text-gray-500 mb-2">February 2026</p>
-      <ul class="list-disc ml-6 text-gray-700 space-y-2">
-        <li>The council reviewed updates from the Fire Department regarding community wellness initiatives.</li>
-        <li>Discussion was held concerning infrastructure improvements along Gary Avenue.</li>
-        <li>Budget adjustments were presented for review.</li>
-      </ul>
+                    <!-- Upcoming Meeting Reminder -->
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-bell text-brand-gold mr-2"></i> Next Meeting
+                        </h3>
+                        <div class="bg-brand-light rounded-xl shadow-sm border border-purple-100 p-6 text-center h-full flex flex-col justify-center items-center">
+                            <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-brand-purple text-2xl mb-4 shadow-sm">
+                                <i class="far fa-calendar-check"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-gray-800 mb-2">March 9, 2026</h4>
+                            <p class="text-gray-600 mb-1"><i class="far fa-clock mr-1"></i> 6:00 PM</p>
+                            <p class="text-gray-600 mb-6"><i class="fas fa-map-marker-alt mr-1"></i> City Hall Council Chambers</p>
+                            
+                            <a href="#subscribe" class="w-full inline-block px-4 py-2 bg-brand-purple text-white rounded-lg font-medium hover:bg-purple-800 transition-colors shadow-sm">
+                                Get Reminder
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-      <div class="mt-4">
-        <a href="#" class="text-brandPurple font-semibold underline">
-          View Official Minutes
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
+            <!-- Quick Access Grid -->
+            <section class="py-12 px-4 bg-white">
+                <div class="max-w-6xl mx-auto">
+                    <h3 class="text-xl font-bold text-gray-800 mb-6 text-center">Quick Access</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        
+                        <div class="p-6 rounded-xl border border-gray-200 hover:border-brand-purple hover:shadow-md transition-all text-center">
+                            <div class="text-3xl text-brand-purple mb-4"><i class="fas fa-balance-scale"></i></div>
+                            <h4 class="font-bold text-gray-800 mb-2">Ordinance Explorer</h4>
+                            <p class="text-sm text-gray-600 mb-4">Plain-English summaries of commonly referenced local laws.</p>
+                            <a href="#ordinances" class="text-brand-purple font-semibold text-sm hover:underline">Explore Ordinances →</a>
+                        </div>
+
+                        <div class="p-6 rounded-xl border border-gray-200 hover:border-brand-gold hover:shadow-md transition-all text-center">
+                            <div class="text-3xl text-brand-gold mb-4"><i class="fas fa-store"></i></div>
+                            <h4 class="font-bold text-gray-800 mb-2">Doing Business</h4>
+                            <p class="text-sm text-gray-600 mb-4">A step-by-step guide to local requirements for entrepreneurs.</p>
+                            <a href="#business" class="text-brand-gold font-semibold text-sm hover:underline">View Guide →</a>
+                        </div>
+
+                        <div class="p-6 rounded-xl border border-gray-200 hover:border-gray-400 hover:shadow-md transition-all text-center">
+                            <div class="text-3xl text-gray-600 mb-4"><i class="fas fa-file-signature"></i></div>
+                            <h4 class="font-bold text-gray-800 mb-2">Official Documents</h4>
+                            <p class="text-sm text-gray-600 mb-4">Direct access to the City Clerk's official repository.</p>
+                            <a href="https://www.fairfieldal.org" target="_blank" class="text-gray-600 font-semibold text-sm hover:underline">Visit City Site <i class="fas fa-external-link-alt text-xs ml-1"></i></a>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Transparency Section -->
+            <section class="py-10 px-4 bg-gray-50 border-t border-gray-200">
+                <div class="max-w-4xl mx-auto text-center">
+                    <div class="inline-block p-3 rounded-full bg-blue-50 text-blue-600 mb-3">
+                        <i class="fas fa-info-circle text-xl"></i>
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        <strong>Transparency Note:</strong> Fairfield Civic Updates provides simplified summaries for easier understanding. Official and controlling documents are always maintained by the City Clerk and linked where available. This is not a substitute for official legal code.
+                    </p>
+                </div>
+            </section>
+        </div>
+
+
 
 <!-- FOOTER -->
 <footer class="mt-16 bg-brandLight border-t-4 border-brandGold py-8">
